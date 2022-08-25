@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./component/home/Home";
+import Header from "./component/header/Header";
+import Tasks from "./component/todo/Tasks";
+import ProvideTodo from "./context/TodoContext";
+import WeatherProvider from "./context/WeatherCont";
+import Weather from "./component/wheather/Weather";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ProvideTodo>
+        <WeatherProvider>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='todo' element={<Tasks Addd={"show"} />} />
+            <Route path='weather' element={<Weather />} />
+          </Routes>
+        </WeatherProvider>
+      </ProvideTodo>
+    </>
   );
 }
 

@@ -1,0 +1,30 @@
+a{
+    text-decoration: none;
+}
+.wrapper{
+    position: relative;
+    overflow: hidden;
+}
+header{
+    position:absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.wrap{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.logo{
+    flex: 1;
+}
+.nav ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+}
+
